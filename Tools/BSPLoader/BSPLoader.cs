@@ -40,7 +40,7 @@ namespace Dataram57.Tools
             path = GUILayout.TextField(path);
             GUILayout.Label("Map name(e1m1):");
             mapName = GUILayout.TextField(mapName);
-            GUILayout.Label("Mesh uutput folder location(Assets/...):");
+            GUILayout.Label("Mesh Output folder location(Assets/...):");
             meshOutputLocation = GUILayout.TextField(meshOutputLocation);
             GUILayout.Label("Material folder Location(Assets/...):");
             materialsLocation = GUILayout.TextField(materialsLocation);
