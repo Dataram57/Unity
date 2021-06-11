@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using LibBSP;
@@ -8,21 +8,14 @@ namespace Dataram57.Tools
 {
     public class BSPLoader : EditorWindow
     {
-        static BSPLoader window;
+        static BSPLoader window;    //unused
         static string path = @"C:\rintorfer\maps";
-        static string mapName = @"e1m1";
+        static string mapName = @"r1m1";
         static string meshOutputLocation = @"Assets/mesh/";
-        static string materialsLocation = @"Assets/Materials";
+        static string materialsLocation = @"Assets/GFX/Materials";
         BSP bsp;
 
         /*
-        * 
-        * 
-        * 
-        * 
-        * 
-        * 
-        * 
         * Links:
         * https://github.com/wfowler1/Unity3D-BSP-Importer
         * https://github.com/wfowler1/LibBSP
@@ -68,7 +61,7 @@ namespace Dataram57.Tools
             Model map = bsp.models[0];
 
             //faces (each face has texture)
-            List<Face> faces = bsp.GetFacesInModel(map);
+            List<Face> faces = bsp.GetFacesInModel(map);        
 
             // Texture ; Mesh
             Dictionary<string, List<Mesh>> textureMeshMap = new Dictionary<string, List<Mesh>>();
@@ -86,8 +79,8 @@ namespace Dataram57.Tools
 
                 if (face.NumEdgeIndices <= 0 && face.NumVertices <= 0)
                     continue;
-
-                int textureIndex = bsp.GetTextureIndex(face);       //gets index face (useful for me)
+                
+                int textureIndex = GetTextureIndex(face);       //gets index face (useful for me)
 
                 if (textureIndex >= 0)
                 {
@@ -175,7 +168,6 @@ namespace Dataram57.Tools
 
         }
 
-
         protected string CorrectDir(string dir)
         {
             dir = dir.Trim();
@@ -211,6 +203,30 @@ namespace Dataram57.Tools
         protected Mesh CreateLoDTerrainMesh(LODTerrain lodTerrain)
         {
             return MeshUtils.CreateMoHAATerrainMesh(bsp, lodTerrain);
+        }
+
+        //taken from LIBBSP.Model.cs
+        public int GetTextureIndex(Face face)
+        {
+            if (face.TextureIndex >= 0)
+            {
+                return face.TextureIndex;
+            }
+            else
+            {
+                if (face.TextureInfoIndex >= 0) //method update (the problem was that the condition was '>' and it couldn't accept 0(the first texture mentioned))
+                {
+                    if (bsp.texDatas != null)
+                    {
+                        return bsp.texDatas[bsp.texInfo[face.TextureInfoIndex].TextureIndex].TextureStringOffsetIndex;
+                    }
+                    else
+                    {
+                        return bsp.texInfo[face.TextureInfoIndex].TextureIndex;
+                    }
+                }
+            }
+            return -1;
         }
     }
 }
