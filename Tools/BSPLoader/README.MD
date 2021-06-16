@@ -24,7 +24,7 @@ https://github.com/Dataram57/Unity/blob/main/Tools/BSPLoader/BSPLoader.cs<br><br
 
 
 ## Setup
-1. On the top menu bar go to Dataram_57/Tools/BSPLoader.<br><br>
+1. On the top menu bar go to Tools/Dataram_57/BSPLoader.<br><br>
 ![Image of Yaktocat](https://github.com/Dataram57/Unity/blob/main/Tools/BSPLoader/tuto1.gif)<br><br>
 2. Fill the input fields with:
     - Path to the folder with .bsp maps. (example: C:\Quake\id1\maps\)
