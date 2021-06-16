@@ -21,7 +21,7 @@ namespace Dataram57.Tools
         * https://github.com/wfowler1/LibBSP
         */
 
-        [MenuItem("Dataram_57/Tools/BSP Loader")]
+        [MenuItem("Tools/Dataram_57/BSP Loader")]
         public static void Open()
         {
             window = (BSPLoader)GetWindow(typeof(BSPLoader));
