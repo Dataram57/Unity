@@ -3,11 +3,17 @@
 ## Reason
 This tool has been made to simplify mapping for Unity and to show that mapping is not hard.
 
+## Tutorial
+
+Youtube:<br>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/GArfgC-AmEs/0.jpg)](https://www.youtube.com/watch?v=GArfgC-AmEs)
+
 ## How the mapping scheme works?
 
 1. Create a map in your editor.
 2. Compile/Export this map to the quake1 .bsp format
 3. Click the "Load" button to load the .bsp map into unity.
+
 
 ## Installation
 #### Mapping tools
