@@ -22,8 +22,8 @@ Here is a tutorial video of the installation: https://youtu.be/gONePWocbqA
 
 1. Download<br>
 Dependencies:<br>
-https://github.com/wfowler1/LibBSP/<br>
-https://github.com/wfowler1/Unity3D-BSP-Importer<br><br>
+https://github.com/Dataram57/LibBSP<br>
+https://github.com/Dataram57/Unity3D-BSP-Importer<br><br>
 BSPLoader script:<br>
 https://github.com/Dataram57/Unity/blob/main/Tools/BSPLoader/BSPLoader.cs<br><br>
 2. Install the scripts by putting the files(unpacked) into Unity. <br>
